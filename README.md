@@ -4,4 +4,4 @@
 
 https://xoghsms.pythonanywhere.com
 
-[Mywebsite](https://xoghsms.pythonanywhere.com, "My website")
+[Mywebsite](https://xoghsms.pythonanywhere.com)
