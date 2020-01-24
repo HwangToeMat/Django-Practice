@@ -2,4 +2,5 @@
 
 ## 1. Make my website
 
-LINK: >> [Mywebsite](https://xoghsms.pythonanywhere.com)
+This site has implemented membership , login, and bulletin board functions.
+### LINK : [Mywebsite](https://xoghsms.pythonanywhere.com)
