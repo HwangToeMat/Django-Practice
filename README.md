@@ -2,4 +2,4 @@
 
 ## 1. Make my website
 
-<url href="xoghsms.pythonanywhere.com">my web</url>
+[Mywebsite](https://xoghsms.pythonanywhere.com, "My website")
