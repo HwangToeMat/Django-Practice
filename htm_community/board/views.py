@@ -4,6 +4,8 @@ from django.http import Http404
 from .models import Board
 from .forms import BoardForm
 from django.core.paginator import Paginator
+from tag.models import Tag
+
 # Create your views here.
 
 
@@ -24,12 +26,19 @@ def board_write(request):
         if form.is_valid():
             user_id = request.session.get('user')
             fcuser = Fcuser.objects.get(pk=user_id)
+            tags = form.cleaned_data['tags'].split(',')
 
             board = Board()
             board.title = form.cleaned_data['title']
             board.content = form.cleaned_data['content']
             board.writer = fcuser
             board.save()
+
+            for tag in tags:
+                if not tag:
+                    continue
+                _tag, _ = Tag.objects.get_or_create(name=tag)
+                board.tags.add(_tag)
 
             return redirect('/board/list/')
     else:
