@@ -5,7 +5,7 @@ from .models import HTMuser
 
 
 class HTMuserAdmin(admin.ModelAdmin):
-    list_display = ('email', )
+    list_display = ('email', 'level', 'register_date')
 
 
 admin.site.register(HTMuser, HTMuserAdmin)

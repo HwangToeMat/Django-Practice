@@ -5,7 +5,7 @@ from .models import Order
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('htmuser', 'product')
+    list_display = ('htmuser', 'product', 'quantity', 'register_date')
 
 
 admin.site.register(Order, OrderAdmin)
