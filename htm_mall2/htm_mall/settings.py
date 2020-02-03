@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'htmuser',
     'order',
     'product',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

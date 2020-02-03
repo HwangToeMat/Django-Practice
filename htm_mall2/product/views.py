@@ -6,8 +6,30 @@ from .models import Product
 from order.forms import RegisterForm as OrderForm
 from htmuser.decorators import login_required, admin_required
 from django.utils.decorators import method_decorator
-
+from rest_framework import generics
+from rest_framework import mixins
+from .serializers import ProductSerializer
 # Create your views here.
+
+
+class ProductListAPI(generics.GenericAPIView, mixins.ListModelMixin):
+    serializer_class = ProductSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, * args, **kwargs)
+
+    def get_queryset(self):
+        return Product.objects.all().order_by('id')
+
+
+class ProductDetailAPI(generics.GenericAPIView, mixins.RetrieveModelMixin):
+    serializer_class = ProductSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, * args, **kwargs)
+
+    def get_queryset(self):
+        return Product.objects.all().order_by('id')
 
 
 class ProductList(ListView):
